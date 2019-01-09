@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+<html ng-app="app">
+  
+<!-- Mirrored from kipalog.com/users/vanlan228/mypage by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 08 Jan 2019 23:58:38 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
+<head>
+    <!-- Standard Meta -->
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+    
+    <!-- Site Properities -->
+    <title>
+        Lan Nguyen
+
+    </title>
+    <link data-turbolinks-track="true" href="../../assets/application-5760f1ecfa283a3d994b4a09b37eaf19.css" media="all" rel="stylesheet" />
+      <link href="../../assets/mypage-5ed3ceb2f8df4a0339b9cae8998150de.css" media="screen" rel="stylesheet" />
+
+    <script data-turbolinks-track="true" src="../../assets/application-2cc9d020b184ed31c75f863577851868.js"></script>
+      <script src="../../assets/jquery-drawDoughnutChart/jquery.drawDoughnutChart-22854894cfe91d7bcf0594fac1d0e8c9.js"></script>
+
+    <link href="../../assets/common/icon/favicon-70fe7f7a773df88ce80fc2506239715f.ico" rel="shortcut icon" type="image/vnd.microsoft.icon" />
+
+    <!-- GA -->
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','../../../www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-53121223-2', 'auto');
+      ga('send', 'pageview');
+
+    </script>
+    <!-- GA -->
+  </head>
+  <body>
+
+    <header class="master-header" ng-controller="HeaderController" ng-cloak>
+  <div class="ui transparent inverted main menu page grid">
+    <div class="middle aligned column header-container">
+      <!-- Left -->
+      <!-- Logo -->
+      <p class="logo item">
+        <a href="../../index.html">
+          <img class="ui image" src=../../assets/common/icon/logo-089ee7649acd5dd69ceb7c9dddece3bf.png >
+</a>      </p>
+      <!-- Search filed -->
+      <form id="search-form" class="ui search item" method="GET" action="https://kipalog.com/search">
+        <div class="ui icon input">
+          <input id="search-field" name="q" class="focus-popup" type="text" placeholder="Tìm kiếm" autocomplete="off" data-content="<span>Nhập từ và </span><div class='enter-button'><span>enter </span><i class='clockwise rotated level down icon'></i></div><span> để bắt đầu tìm kiếm</span>" data-position="bottom center" data-offset="7">
+        </div>
+      </form >
+
+      <!-- JS variable of logged-in or guest -->
+      <input type="hidden" ng-init="userLoggedIn=false">
+
+      <!-- Logged in header -->
+      <!-- Anonymous header -->
+        <div class="right menu">
+          <!-- Signin btn -->
+          <div class="anonymous item btn">
+            <a class="ui basic inverted button" href="../sign_in.html#login">
+              <i class="sign in icon"></i>
+              Đăng nhập
+</a>          </div>
+          <!-- Signup btn -->
+          <div class="anonymous item btn">
+            <a class="ui green button" href="../../index.html">
+              <i class="user icon"></i>
+              Đăng ký
+</a>          </div>
+        </div>
+    </div>
+  </div>
+</header>
+
+    <div class="ui small confirm modal" id="semanticAlert">
+  <i class="close icon"></i>
+  <div class="header">
+    Chú ý
+  </div>
+  <div class="content">
+    <div class="left">
+      <i class="orange warning icon"></i>
+    </div>
+    <div class="right">
+      <p class=message>
+      </p>
+    </div>
+  </div>
+  <div class="actions">
+    <div class="ui circular orange button">
+      Ok
+    </div>
+  </div>
+</div>
+
+    <main class="master-body" scrollable-to-top data-target=".scroll-top" >
+      
+<!-- Login modal in guest mode -->
+<!-- Join Modal-->
+<div class="ui signin modal join-modal" id="login-modal">
+  <i class="close icon"></i>
+  <div class="ui center aligned teal header pc">
+    Chào bạn! Hãy đăng ký hoặc đăng nhập để tiếp tục nhé!
+  </div>
+  <span class="ui center aligned teal header smartphone">
+    Kipalog
+  </span>
+
+  <div class="content">
+
+    <div class="ui two column middle aligned grid basic segment">
+      <div class="equal height row">
+        <!-- Login column -->
+        <div class="column">
+          <!-- SignIn form - place Sign In URL here -->
+          <form accept-charset="UTF-8" action="https://kipalog.com/users/sign_in" class="ui form segment" id="new_user" method="post"><div style="display:none"><input name="utf8" type="hidden" value="&#x2713;" /><input name="authenticity_token" type="hidden" value="tlpqMO367Kt5ZNNJr719/04WN5xnql5bmsKKRkgBUAc=" /></div>
+            <input id="from" name="from" type="hidden" value="home" />
+            <div class="field">
+              <!-- Place Sign Up URL here -->
+              <input type="hidden" id="signUpURL" value="/users">
+            </div>
+            <div class="field">
+              <div class="ui left labeled icon input">
+                <input autofocus="autofocus" id="user_email" name="user[email]" placeholder="Email" type="email" value="" />
+                <i class="mail icon"></i>
+              </div>
+            </div>
+            <div class="field">
+              <div class="ui left labeled icon input">
+                <input autocomplete="off" id="user_password" name="user[password]" placeholder="Password" type="password" />
+                <i class="lock icon"></i>
+              </div>
+            </div>
+            <div class="two fluid ui buttons">
+              <input class="ui teal submit button" type="submit" id="signin" value="Đăng nhập"></input>
+              <div class="or"></div>
+              <input class="ui orange button signup-kick" type="submit" id="signup" value="Đăng ký" data-target=".ui.form" data-endpoint="#signUpURL" ></input>
+            </div>
+</form>        <!-- Divider -->
+        <div class="ui horizontal divider">
+          or
+        </div>
+        </div>
+        <!-- Divider -->
+        <div class="ui vertical divider">
+          or
+        </div>
+        <!-- Social column -->
+        <div class="center aligned column">
+          <!-- facebook -->
+          <a class="ui facebook button" href="https://www.facebook.com/dialog/oauth?client_id=1403286366560425&amp;redirect_uri=https%3A%2F%2Fkipalog.com%2Fusers%2Fauth%2Ffacebook%2Fcallback&amp;response_type=code&amp;scope=email&amp;state=5890f371cf9dc2e724f3dc47209c185b361527c5e91e4674">
+            <i class="facebook icon"></i>
+            facebook
+</a>          <!-- twitter -->
+          <a class="ui twitter button" href="../auth/twitter.html">
+            <i class="twitter icon"></i>
+            twitter
+</a>          <!-- github-->
+          <a class="ui black button" href="https://github.com/login/oauth/authorize?client_id=1d58bf11849f0c2e4274&amp;redirect_uri=https%3A%2F%2Fkipalog.com%2Fusers%2Fauth%2Fgithub%2Fcallback&amp;response_type=code&amp;state=ec0af8930f8f4e16e55a25866919321b776fe886922894f7">
+            <i class="github icon"></i>
+            github
+</a>        </div>
+      </div>
+    </div>
+    <br>
+    <!-- Info message -->
+    <div class="ui message">
+      <p>
+        <i class="info icon"></i>
+        Bạn luôn có thể lựa chọn email hoặc các tài khoản mạng xã hội để đăng nhập hoặc đăng ký.
+      </p>
+    </div>
+    <br>
+  </div>
+</div>
+
+
+<div class="ui page grid">
+  <div class="center aligned sixteen wide column">
+
+    <div class="row main-frame">
+      <div class="stackable ui grid">
+        <div class="equal height row">
+
+          <!-- Left col -->
+          <div class="ui four wide middle center aligned column left-col">
+            <!-- Avatar -->
+            <div class="ui main avatar image">
+              <img alt="White" class="lazy" original="/assets/common/male_avatar-f0133698a204bbc1684476efffe76f51.png" src="../../assets/common/white-2fc71600ba5d5c4443a7dbb1375f1803.png" />
+            </div>
+            <!-- Info -->
+            <div class="ui basic segment">
+              <strong id="name">Lan Nguyen</strong>
+              <div class="ui basic segment">
+              </div>
+            </div>
+
+            <!-- Stats -->
+            <div class="ui three column divided grid">
+              <div class="center aligned column">
+                <p class="pc-stat">Kipalog</p>
+                <p class="smart-stat">
+                  <i class="thumbs up icon"></i>
+                </p>
+                <a class="popup" id="contribution" data-content="Tổng số lượt kipalog trong tất cả bài viết" data-position="bottom center">0</a>
+              </div>
+              <div class="ui center aligned column">
+                <p class="pc-stat">Bình luận</p>
+                <p class="smart-stat">
+                  <i class="comment icon"></i>
+                </p>
+                <a class="popup" data-content="Tổng số lượt bình luận trong tất cả bài viết" data-position="bottom center">0</a>
+              </div>
+              <div class="ui center aligned column">
+                <p class="pc-stat">Lượt xem</p>
+                <p class="smart-stat">
+                  <i class="unhide icon"></i>
+                </p>
+                <a class="popup" data-content="Tổng số lượt xem trên tất cả bài viết" data-position="bottom center">0</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="ui one wide column blank-col"></div>
+
+          <!-- Center col -->
+          <div class="ui six wide middle aligned column center-col">
+            <div class="ui list">
+
+              <div class="item follow-btn">
+                <!-- Follow button -->
+                <div class="ui small circular basic button" ng-class="{'active':userFollowed}" ng-controller='UserFollowController' ng-click='followUser();' ng-cloak>
+
+                  <input type="hidden" ng-init="follow_endpoint='/users/follow'">
+                  <input type="hidden" ng-init="unfollow_endpoint='/users/unfollow'">
+                  <input type="hidden" ng-init="userFollowed=false">
+                  <input type="hidden" ng-init="other_id='iyLces8L2qWs7Snr1e6Ocw'">
+                  <input type="hidden" ng-init="userLoggedIn=false">
+                  <i class="rss icon" ng-class="{'teal outline':!userFollowed}"></i>
+                  {{userFollowed ? 'Following' : 'Follow'}}
+                </div>
+              </div>
+
+              <!-- Followers -->
+                <div class="item">
+                  <p>
+                    1 người theo dõi Lan Nguyen
+                  </p>
+                    <a href="../ltluc253/mypage.html" class="ui avatar image">
+                      <img alt="White" class="lazy popup" data-content="ltluc253" data-variation="inverted" original="/assets/common/male_avatar-f0133698a204bbc1684476efffe76f51.png" src="../../assets/common/white-2fc71600ba5d5c4443a7dbb1375f1803.png" />
+                    </a>
+                </div>
+
+              <!-- Following -->
+                <div class="item">
+                  <p>
+                    6 người được Lan Nguyen theo dõi
+                  </p>
+                    <a href="../dinhquochan/mypage.html" class="ui avatar image">
+                      <img alt="White" class="lazy popup" data-content="Đinh Quốc Hân" data-variation="inverted" original="https://secure.gravatar.com/avatar/4b8518ec79c9658a8947f41bb1cc5697?s=250" src="../../assets/common/white-2fc71600ba5d5c4443a7dbb1375f1803.png" />
+                    </a>
+                    <a href="../VuNhatMinh/mypage.html" class="ui avatar image">
+                      <img alt="White" class="lazy popup" data-content="Vu Nhat Minh" data-variation="inverted" original="https://s3-ap-southeast-1.amazonaws.com/kipalog.com/dtkycrfm2t_hrlxd8Jh.png" src="../../assets/common/white-2fc71600ba5d5c4443a7dbb1375f1803.png" />
+                    </a>
+                    <a href="../manhdung/mypage.html" class="ui avatar image">
+                      <img alt="White" class="lazy popup" data-content="manhdung" data-variation="inverted" original="https://i.imgur.com/SYZ4PzT.jpg" src="../../assets/common/white-2fc71600ba5d5c4443a7dbb1375f1803.png" />
+                    </a>
+                    <a href="../HuyHoangPham/mypage.html" class="ui avatar image">
+                      <img alt="White" class="lazy popup" data-content="Huy Hoàng Phạm" data-variation="inverted" original="https://i.want.tf/to/that/tsyISkHT.jpg" src="../../assets/common/white-2fc71600ba5d5c4443a7dbb1375f1803.png" />
+                    </a>
+                    <a href="../mido/mypage.html" class="ui avatar image">
+                      <img alt="White" class="lazy popup" data-content="Mido" data-variation="inverted" original="https://s15.postimg.org/sd3dp6ftn/profile_pic.jpg" src="../../assets/common/white-2fc71600ba5d5c4443a7dbb1375f1803.png" />
+                    </a>
+                    <a href="../LeVanHoang/mypage.html" class="ui avatar image">
+                      <img alt="White" class="lazy popup" data-content="Le Van Hoang" data-variation="inverted" original="https://avatars.githubusercontent.com/u/319726?v=3" src="../../assets/common/white-2fc71600ba5d5c4443a7dbb1375f1803.png" />
+                    </a>
+
+                </div>
+
+              <!-- Tags -->
+
+              <!-- Organizations -->
+
+            </div>
+          </div>
+
+          <div class="ui one wide column blank-col">
+          </div>
+
+          <!-- Right col -->
+          <div class="ui four wide middle aligned column right-col">
+            <div id="doughnutChart" class="chart"></div>
+          </div>
+
+        </div> <!-- Equal height row -->
+
+      </div>
+    </div>
+
+    <!-- Divider -->
+    <div class="row divider-line">
+      <div class="ui horizontal icon divider">
+        <i class="circular green down arrow icon"></i>
+      </div>
+    </div>
+
+    <!-- Posts -->
+    <div class="row popular-posts">
+      <div class="ui grid">
+        <div class="ui two wide column blank-col">
+        </div>
+        <div class="ui twelve wide column feed-col">
+
+          <div class="ui top attached secondary menu" style="display: none;">
+            <a class="active item">
+              <span>Bài viết</span> <!-- FIXME: translate -->
+            </a>
+          </div>
+
+          <!-- Feed -->
+          <div class="ui massive selection divided list feed-list timeline" ng-cloak ng-controller="PaginationController" ng-init="init('mypage', 'vanlan228')">
+
+            <div ng-repeat="post in posts">
+              <!-- Normal Item -->
+              <div class="item" ng-if="!post.til">
+                <a href="%7b%7b%20post.user.html" class="ui avatar image">
+                  <img alt="White" class="lazy" original="{{ post.user.avatar_url_path }}" src="../../assets/common/white-2fc71600ba5d5c4443a7dbb1375f1803.png" />
+                </a>
+                <a href="%7b%7b%20post.html" class="right floated feed-date">
+                  {{ post.like_cnt }}
+                  <i class="bookmark icon"></i>
+                  {{ post.cmts_cnt }}
+                  <i class="comment icon"></i>
+                </a>
+                <div class="content">
+                  <div class="header">
+                    <a href="%7b%7b%20post.html">
+                      {{ post.title }}
+                    </a>
+                    <div class="tag">
+                      <a href="%7b%7b%20tag.html" class="ui label" ng-repeat="tag in post.tags">
+                        {{ tag.name }}
+                      </a>
+                    </div>
+                  </div>
+                  <div class="detail"> {{post.preview}} </div>
+                  <div class="meta">
+                    <a href="%7b%7b%20post.user.html">
+                      {{ post.user.name}}
+                    </a>
+                    viết
+                    {{ post.created_at }}
+                    trước
+                  </div>
+                  <div class="smart-meta">
+                    {{ post.like_cnt }}
+                    <i class="bookmark icon"></i>
+                    {{ post.cmts_cnt }}
+                    <i class="comment icon"></i>
+                  </div>
+                </div>
+              </div>
+
+              <div class="timeline-block" ng-if="post.til">
+                <div class="timeline-img">
+                  <!-- <i class="edit icon"></i> -->
+                  <img alt="White" class="ui avatar image lazy" original="{{ post.user.avatar_url_path }}" src="../../assets/common/white-2fc71600ba5d5c4443a7dbb1375f1803.png" />
+                </div>
+                <div class="ui message timeline-content">
+                  <a href="%7b%7b%20post.html" class="header">
+                    {{ post.title }}
+                  </a>
+                  <span class="rubber_stamp">#TIL</span>
+                  <p class="detail">
+                    {{ post.preview }}
+                  </p>
+                  <p class="meta">
+                    viết
+                    {{ post.created_at }}
+                    trước
+                  </p>
+                </div>
+              </div>
+
+            </div>
+
+            <!-- Load more button -->
+            <div class="ui fluid basic button load-more segment touchend-replace" ng-hide="reachFull" ng-click="loadmore('top')">
+              <div class="ui inverted dimmer" ng-class="{'active':loading_more}">
+                <div class="ui text loader" style="background: url(../../assets/common/ring-41adc1d3011969434d0f5d3a59f879a2.gif) no-repeat 45% 0!important; background-size: 32px 32px!important;">
+                  <span class="translation_missing" title="translation missing: vi.users.mypage.now_loading">Now Loading</span>
+                </div>
+              </div>
+              <span ng-hide="loading">
+                <span class="translation_missing" title="translation missing: vi.users.mypage.load_more">Load More</span>
+              </span>
+            </div>
+
+          </div> <!-- Feed -->
+
+        </div>
+        <div class="ui two wide column blank-col">
+        </div>
+      </div>
+    </div>
+  </div> <!-- sixteen wide column -->
+
+
+  <!-- Scroll to top -->
+  <div class="scroll-top">
+    <i class="large level up icon"></i>
+  </div>
+
+</div> <!-- Page grid -->
+
+<script type='text/javascript'>
+  $(document).ready(function() {
+    $("#doughnutChart").drawDoughnutChart(
+      [],
+      {
+        baseColor: "#fff",
+        segmentStrokeColor : "#fff",
+        summaryTitle: "Bài viết:",
+        overwriteTotal: 0,
+      }
+    );
+  });
+</script>
+
+    </main>
+      <!-- Footer -->
+<footer class="master-footer ui page grid">
+  <div class="row">
+    <div class="column">
+      <div class="ui horizontal divider">
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="twelve wide main column">
+      <div class="links">
+        <a target="_blank" href="../../tos.html">
+          Điều khoản
+        </a>
+        <a target="_blank" href="https://www.facebook.com/groups/1466126020344500/">
+          Phản hồi
+        </a>
+        <a target="_blank" href="https://github.com/Kipalog/Issue-tracker">
+          Yêu cầu
+        </a>
+        <a target="_blank" href="https://www.facebook.com/pages/Kipalog/486208978117754">
+          Fanpage
+        </a>
+      </div>
+    </div>
+    <div class="four wide right column">
+      <div class="copyright">
+        <span>
+          Copyright © 2018 Kipalog
+        </span>
+      </div>
+    </div>
+  </div>
+</footer>
+
+  </body>
+
+<!-- Mirrored from kipalog.com/users/vanlan228/mypage by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 08 Jan 2019 23:58:41 GMT -->
+</html>

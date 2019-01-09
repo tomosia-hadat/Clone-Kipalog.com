@@ -1,0 +1,5 @@
+# HTTrack Website Copier Cookie File
+# This file format is compatible with Netscape cookies
+kipalog.com	TRUE	/	FALSE	1999999999	_ktmt_platform_session	9dfd2cf179453456ceef64ff9175d37d
+kipalog.com	TRUE	/	FALSE	1999999999	XSRF-TOKEN	tlpqMO367Kt5ZNNJr719%2F04WN5xnql5bmsKKRkgBUAc%3D
+

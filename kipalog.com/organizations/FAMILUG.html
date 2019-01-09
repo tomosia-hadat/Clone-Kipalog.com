@@ -1,0 +1,497 @@
+<!DOCTYPE html>
+<html ng-app="app">
+  
+<!-- Mirrored from kipalog.com/organizations/FAMILUG by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 09 Jan 2019 00:42:20 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
+<head>
+    <!-- Standard Meta -->
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+      <meta name="description" content="FAMILUG là một website chia sẻ kinh nghiệm lập trình, quản trị hệ thống, devops. Yêu Python, nghiện Vim và cuồng CLI." />
+
+    <!-- Site Properities -->
+    <title>
+        FAMILUG
+
+    </title>
+    <link data-turbolinks-track="true" href="../assets/application-5760f1ecfa283a3d994b4a09b37eaf19.css" media="all" rel="stylesheet" />
+      <link href="../assets/wall-ebe275c4d5d32139a372d1486d375f71.css" media="screen" rel="stylesheet" />
+
+    <script data-turbolinks-track="true" src="../assets/application-2cc9d020b184ed31c75f863577851868.js"></script>
+    
+    <link href="../assets/common/icon/favicon-70fe7f7a773df88ce80fc2506239715f.ico" rel="shortcut icon" type="image/vnd.microsoft.icon" />
+
+    <!-- GA -->
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','../../www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-53121223-2', 'auto');
+      ga('send', 'pageview');
+
+    </script>
+    <!-- GA -->
+  </head>
+  <body>
+
+    <header class="master-header" ng-controller="HeaderController" ng-cloak>
+  <div class="ui transparent inverted main menu page grid">
+    <div class="middle aligned column header-container">
+      <!-- Left -->
+      <!-- Logo -->
+      <p class="logo item">
+        <a href="../index.html">
+          <img class="ui image" src=../assets/common/icon/logo-089ee7649acd5dd69ceb7c9dddece3bf.png >
+</a>      </p>
+      <!-- Search filed -->
+      <form id="search-form" class="ui search item" method="GET" action="https://kipalog.com/search">
+        <div class="ui icon input">
+          <input id="search-field" name="q" class="focus-popup" type="text" placeholder="Tìm kiếm" autocomplete="off" data-content="<span>Nhập từ và </span><div class='enter-button'><span>enter </span><i class='clockwise rotated level down icon'></i></div><span> để bắt đầu tìm kiếm</span>" data-position="bottom center" data-offset="7">
+        </div>
+      </form >
+
+      <!-- JS variable of logged-in or guest -->
+      <input type="hidden" ng-init="userLoggedIn=false">
+
+      <!-- Logged in header -->
+      <!-- Anonymous header -->
+        <div class="right menu">
+          <!-- Signin btn -->
+          <div class="anonymous item btn">
+            <a class="ui basic inverted button" href="../users/sign_in.html#login">
+              <i class="sign in icon"></i>
+              Đăng nhập
+</a>          </div>
+          <!-- Signup btn -->
+          <div class="anonymous item btn">
+            <a class="ui green button" href="../index.html">
+              <i class="user icon"></i>
+              Đăng ký
+</a>          </div>
+        </div>
+    </div>
+  </div>
+</header>
+
+    <div class="ui small confirm modal" id="semanticAlert">
+  <i class="close icon"></i>
+  <div class="header">
+    Chú ý
+  </div>
+  <div class="content">
+    <div class="left">
+      <i class="orange warning icon"></i>
+    </div>
+    <div class="right">
+      <p class=message>
+      </p>
+    </div>
+  </div>
+  <div class="actions">
+    <div class="ui circular orange button">
+      Ok
+    </div>
+  </div>
+</div>
+
+    <main class="master-body" scrollable-to-top data-target=".scroll-top" >
+      
+<!-- Cover -->
+<div class="cover">
+  <img alt="White" class="lazy" original="https://s3-ap-southeast-1.amazonaws.com/kipalog.com/89n4vqvt5i_blob" src="../assets/common/white-2fc71600ba5d5c4443a7dbb1375f1803.png" />
+</div>
+
+<div class="ui page grid" ng-controller="OrganizationController">
+  <div class="center aligned sixteen wide column">
+
+    <!-- Meta -->
+    <div class="hidden-meta">
+      <input type="hidden" ng-init="watching=false">
+      <input type="hidden" ng-init="watch_endpoint='/watchings'">
+      <input type="hidden" ng-init="unwatch_endpoint='/watchings/13'">
+      <input type="hidden" ng-init="orgId='13'">
+      <input type="hidden" ng-init="watching_count=10">
+      <input type="hidden" ng-init="userLoggedIn=false">
+    </div>
+    <!-- Head -->
+    <div class="row main-frame">
+      <div class="ui grid">
+        <div class="equal height row">
+          <!-- Left col -->
+          <div class="five wide middle aligned column ava-col">
+            <!-- Avatar -->
+            <div class="ui main image">
+              <img alt="White" class="lazy" original="https://s3-ap-southeast-1.amazonaws.com/kipalog.com/bn7vfqymnp_blob" src="../assets/common/white-2fc71600ba5d5c4443a7dbb1375f1803.png" />
+            </div>
+          </div>
+          <div class="eight wide bottom aligned column stat-col">
+            <!-- Stats -->
+            <div class="ui four column divided grid">
+              <div class="center aligned column posts">
+                <p class="pc-stat">
+                  Bài viết
+                </p>
+                <a class="popup" id="contribution" data-content="Tổng số bài viết" data-position="bottom center">
+                  6
+                </a>
+              </div>
+              <div class="center aligned column topics">
+                <p class="pc-stat">
+                  Chủ đề
+                </p>
+                <a class="popup" data-content="Số chủ đề đề cập đến" data-position="bottom center">
+                  10
+                </a>
+              </div>
+              <div class="center aligned column likes">
+                <p class="pc-stat">
+                  Lượt kipalog
+                </p>
+                <a class="popup" data-content="Tổng số lượt kipalog trên tất cả bài viết" data-position="bottom center">
+                  38
+                </a>
+              </div>
+              <div class="center aligned column members">
+                <p class="pc-stat">
+                  Thành viên
+                </p>
+                <a class="popup" data-content="Tổng số thành viên" data-position="bottom center">
+                  5
+                </a>
+              </div>
+            </div>
+          </div>
+          <!-- Follow button -->
+          <div class="three wide right bottom aligned column follow-col">
+            <div class="ui right aligned small circular basic button" ng-class="{'active':watching}" ng-click="organization_watch();">
+              <i class="rss icon"></i>
+              <span>{{watching? 'Following' : 'Follow'}}</span>
+              <span class="extra">&nbsp; | &nbsp; {{watching_count}}</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Tablet head row -->
+    <div class="row tablet-head">
+      <p class="title">
+        FAMILUG
+      </p>
+      <p class="intro">
+        FAMILUG là một website chia sẻ kinh nghiệm lập trình, quản trị hệ thống, devops. Yêu Python, nghiện Vim và cuồng CLI.
+      </p>
+    </div>
+
+    <!-- Extends -->
+    <div class="row extends">
+      <div class="ui grid">
+
+        <!-- Info -->
+        <div class="five wide column meta-col">
+          <div class="ui basic segment info">
+            <!-- Brief info -->
+            <p class="first title">
+              FAMILUG
+            </p>
+            <p class="intro">
+              FAMILUG là một website chia sẻ kinh nghiệm lập trình, quản trị hệ thống, devops. Yêu Python, nghiện Vim và cuồng CLI.
+            </p>
+            <!-- Place -->
+            <p class="hp">
+              <i class="url icon"></i>
+              <a href="http://www.familug.org/" target="_blank">
+                http://www.familug.org/
+</a>            </p>
+            <p class="place">
+              <i class="map marker icon"></i>
+              <span>
+               
+              </span>
+            </p>
+            <!-- Technique -->
+            <p class="title">
+              Công nghệ
+            </p>
+
+            <!-- Loop tags on organization's posts -->
+                <div class="meta-tags">
+                  <a class="ui label" href="../tags/TIL.html">
+                    TIL
+                    <div class="detail">651</div>
+</a>                </div>
+                <div class="meta-tags">
+                  <a class="ui label" href="../tags/programming.html">
+                    programming
+                    <div class="detail">73</div>
+</a>                </div>
+                <div class="meta-tags">
+                  <a class="ui label" href="../tags/swift.html">
+                    swift
+                    <div class="detail">73</div>
+</a>                </div>
+                <div class="meta-tags">
+                  <a class="ui label" href="../tags/ios.html">
+                    ios
+                    <div class="detail">57</div>
+</a>                </div>
+                <div class="meta-tags">
+                  <a class="ui label" href="../tags/Python.html">
+                    Python
+                    <div class="detail">47</div>
+</a>                </div>
+                <div class="meta-tags">
+                  <a class="ui label" href="../tags/RubyOnRails.html">
+                    RubyOnRails
+                    <div class="detail">40</div>
+</a>                </div>
+                <div class="meta-tags">
+                  <a class="ui label" href="../tags/golang.html">
+                    golang
+                    <div class="detail">38</div>
+</a>                </div>
+                <div class="meta-tags">
+                  <a class="ui label" href="../tags/UX.html">
+                    UX
+                    <div class="detail">17</div>
+</a>                </div>
+                <div class="meta-tags">
+                  <a class="ui label" href="../tags/Rspec.html">
+                    Rspec
+                    <div class="detail">4</div>
+</a>                </div>
+                <div class="meta-tags">
+                  <a class="ui label" href="../tags/Number.html">
+                    Number
+                    <div class="detail">3</div>
+</a>                </div>
+
+          </div>
+        </div>
+
+        <!-- Feed -->
+        <div class="eleven wide column feed-col">
+          <!-- Tabular menu -->
+          <div class="ui top attached fluid tabular menu">
+            <input type="hidden" ng-init="focus='org_posts'">
+            <a class="active item" ng-class="{'active':focus=='org_posts'}" ng-click="focus='org_posts'" id="post-tab">
+              <span>
+               Bài viết
+              </span>
+            </a>
+            <a class="item" ng-class="{'active':focus=='org_people'}" ng-click="focus='org_people'" id="people-tab">
+              <span>
+               Thành viên
+              </span>
+            </a>
+          </div>
+
+          <div class="detail-info">
+            <!-- Organization posts -->
+            <div class="ui bottom attached tab massive selection divided list feed-list" ng-class="{'active':focus=='org_posts'}" id="post-panel" ng-cloak ng-controller="PaginationController" ng-init="init('org', 'FAMILUG')">
+
+              <div class="item" ng-repeat="post in posts">
+                <!-- Item -->
+                <a href="%7b%7b%20post.user.html" class="ui avatar image">
+                  <img alt="White" class="lazy" original="{{ post.user.avatar_url_path }}" src="../assets/common/white-2fc71600ba5d5c4443a7dbb1375f1803.png" />
+                </a>
+                <a href="%7b%7b%20post.html" class="right floated feed-date">
+                  {{ post.like_cnt }}
+                  <i class="bookmark icon"></i>
+                  {{ post.cmts_cnt }}
+                  <i class="comment icon"></i>
+                </a>
+                <div class="content">
+                  <div class="header">
+                    <a href="%7b%7b%20post.html">
+                      {{ post.title }}
+                    </a>
+                    <div class="tag">
+                      <a href="%7b%7b%20tag.html" class="ui label" ng-repeat="tag in post.tags">
+                        {{ tag.name }}
+                      </a>
+                    </div>
+                  </div>
+                  <div class="detail"> {{post.preview}} </div>
+                  <div class="meta">
+                    <a href="%7b%7b%20post.user.html">
+                      {{ post.user.name}}
+                    </a>
+                    viết
+                    {{ post.created_at }}
+                    trước
+                  </div>
+                  <div class="smart-meta">
+                    {{ post.like_cnt }}
+                    <i class="bookmark icon"></i>
+                    {{ post.cmts_cnt }}
+                    <i class="comment icon"></i>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Load more button -->
+              <div class="ui fluid basic button load-more segment touchend-replace" ng-hide="reachFull" ng-click="loadmore()">
+                <div class="ui inverted dimmer" ng-class="{'active':loading_more}">
+                  <div class="ui text loader" style="background: url(../assets/common/ring-41adc1d3011969434d0f5d3a59f879a2.gif) no-repeat 45% 0!important; background-size: 32px 32px!important;">
+                    Đang tải dữ liệu ...
+                  </div>
+                </div>
+                <span ng-hide="loading_more">
+                  Xem tiếp...
+                </span>
+              </div>
+
+            </div>
+
+            <!-- Organization people -->
+            <div class="ui bottom attached tab member-intro" ng-class="{'active':focus=='org_people'}" id="people-panel">
+
+              <div class="ui left aligned three column stackable grid">
+                <div class="row">
+
+                  <!-- Loop People -->
+                    <div class="column">
+                      <div class="item ui grid">
+                        <a class="ui five wide column avatar" href="../users/HVN_FAMILUG/mypage.html">
+                          <img alt="White" class="ui avatar image lazy" original="https://avatars.githubusercontent.com/u/1000665?v=3" src="../assets/common/white-2fc71600ba5d5c4443a7dbb1375f1803.png" />
+</a>                        <div class="ui eleven wide column content">
+                          <a class="header" href="../users/HVN_FAMILUG/mypage.html">
+                            HVN_FAMILUG
+</a>                          <div class="detail">
+                            2
+                            bài,
+                            28
+                            kipalog
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="column">
+                      <div class="item ui grid">
+                        <a class="ui five wide column avatar" href="../users/lamdt/mypage.html">
+                          <img alt="White" class="ui avatar image lazy" original="https://avatars.githubusercontent.com/u/1813855?v=3" src="../assets/common/white-2fc71600ba5d5c4443a7dbb1375f1803.png" />
+</a>                        <div class="ui eleven wide column content">
+                          <a class="header" href="../users/lamdt/mypage.html">
+                            Dang Tung Lam
+</a>                          <div class="detail">
+                            2
+                            bài,
+                            4
+                            kipalog
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="column">
+                      <div class="item ui grid">
+                        <a class="ui five wide column avatar" href="../users/LuuTuanHai/mypage.html">
+                          <img alt="White" class="ui avatar image lazy" original="https://avatars.githubusercontent.com/u/2056615?v=3" src="../assets/common/white-2fc71600ba5d5c4443a7dbb1375f1803.png" />
+</a>                        <div class="ui eleven wide column content">
+                          <a class="header" href="../users/LuuTuanHai/mypage.html">
+                            Lưu Tuấn Hải
+</a>                          <div class="detail">
+                            0
+                            bài,
+                            0
+                            kipalog
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="column">
+                      <div class="item ui grid">
+                        <a class="ui five wide column avatar" href="../users/Jin/mypage.html">
+                          <img alt="White" class="ui avatar image lazy" original="http://graph.facebook.com/1187661281280424/picture" src="../assets/common/white-2fc71600ba5d5c4443a7dbb1375f1803.png" />
+</a>                        <div class="ui eleven wide column content">
+                          <a class="header" href="../users/Jin/mypage.html">
+                            Jin
+</a>                          <div class="detail">
+                            0
+                            bài,
+                            0
+                            kipalog
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="column">
+                      <div class="item ui grid">
+                        <a class="ui five wide column avatar" href="../users/BenjaminBui/mypage.html">
+                          <img alt="White" class="ui avatar image lazy" original="https://avatars.githubusercontent.com/u/1781270?v=3" src="../assets/common/white-2fc71600ba5d5c4443a7dbb1375f1803.png" />
+</a>                        <div class="ui eleven wide column content">
+                          <a class="header" href="../users/BenjaminBui/mypage.html">
+                            Bui Chung
+</a>                          <div class="detail">
+                            2
+                            bài,
+                            6
+                            kipalog
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                </div>
+              </div>
+
+            </div><!-- people-panel -->
+          </div>
+
+        </div>
+
+     </div>
+    </div>
+
+  </div>
+
+</div> <!-- Page grid -->
+
+<!-- Scroll to top -->
+<div class="scroll-top">
+  <i class="large level up icon"></i>
+</div>
+
+    </main>
+      <!-- Footer -->
+<footer class="master-footer ui page grid">
+  <div class="row">
+    <div class="column">
+      <div class="ui horizontal divider">
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="twelve wide main column">
+      <div class="links">
+        <a target="_blank" href="../tos.html">
+          Điều khoản
+        </a>
+        <a target="_blank" href="https://www.facebook.com/groups/1466126020344500/">
+          Phản hồi
+        </a>
+        <a target="_blank" href="https://github.com/Kipalog/Issue-tracker">
+          Yêu cầu
+        </a>
+        <a target="_blank" href="https://www.facebook.com/pages/Kipalog/486208978117754">
+          Fanpage
+        </a>
+      </div>
+    </div>
+    <div class="four wide right column">
+      <div class="copyright">
+        <span>
+          Copyright © 2018 Kipalog
+        </span>
+      </div>
+    </div>
+  </div>
+</footer>
+
+  </body>
+
+<!-- Mirrored from kipalog.com/organizations/FAMILUG by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 09 Jan 2019 00:42:23 GMT -->
+</html>

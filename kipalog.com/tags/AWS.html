@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html ng-app="app">
+  
+<!-- Mirrored from kipalog.com/tags/AWS by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 09 Jan 2019 00:25:25 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
+<head>
+    <!-- Standard Meta -->
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+      <meta name="description" content=" AWS" />
+
+    <!-- Site Properities -->
+    <title>
+        AWS
+
+    </title>
+    <link data-turbolinks-track="true" href="../assets/application-5760f1ecfa283a3d994b4a09b37eaf19.css" media="all" rel="stylesheet" />
+      <link href="../assets/tag-e221410771db670d286534a16fa8f37e.css" media="screen" rel="stylesheet" />
+
+    <script data-turbolinks-track="true" src="../assets/application-2cc9d020b184ed31c75f863577851868.js"></script>
+    
+    <link href="../assets/common/icon/favicon-70fe7f7a773df88ce80fc2506239715f.ico" rel="shortcut icon" type="image/vnd.microsoft.icon" />
+
+    <!-- GA -->
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','../../www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-53121223-2', 'auto');
+      ga('send', 'pageview');
+
+    </script>
+    <!-- GA -->
+  </head>
+  <body>
+
+    <header class="master-header" ng-controller="HeaderController" ng-cloak>
+  <div class="ui transparent inverted main menu page grid">
+    <div class="middle aligned column header-container">
+      <!-- Left -->
+      <!-- Logo -->
+      <p class="logo item">
+        <a href="../index.html">
+          <img class="ui image" src=../assets/common/icon/logo-089ee7649acd5dd69ceb7c9dddece3bf.png >
+</a>      </p>
+      <!-- Search filed -->
+      <form id="search-form" class="ui search item" method="GET" action="https://kipalog.com/search">
+        <div class="ui icon input">
+          <input id="search-field" name="q" class="focus-popup" type="text" placeholder="Tìm kiếm" autocomplete="off" data-content="<span>Nhập từ và </span><div class='enter-button'><span>enter </span><i class='clockwise rotated level down icon'></i></div><span> để bắt đầu tìm kiếm</span>" data-position="bottom center" data-offset="7">
+        </div>
+      </form >
+
+      <!-- JS variable of logged-in or guest -->
+      <input type="hidden" ng-init="userLoggedIn=false">
+
+      <!-- Logged in header -->
+      <!-- Anonymous header -->
+        <div class="right menu">
+          <!-- Signin btn -->
+          <div class="anonymous item btn">
+            <a class="ui basic inverted button" href="../users/sign_in.html#login">
+              <i class="sign in icon"></i>
+              Đăng nhập
+</a>          </div>
+          <!-- Signup btn -->
+          <div class="anonymous item btn">
+            <a class="ui green button" href="../index.html">
+              <i class="user icon"></i>
+              Đăng ký
+</a>          </div>
+        </div>
+    </div>
+  </div>
+</header>
+
+    <div class="ui small confirm modal" id="semanticAlert">
+  <i class="close icon"></i>
+  <div class="header">
+    Chú ý
+  </div>
+  <div class="content">
+    <div class="left">
+      <i class="orange warning icon"></i>
+    </div>
+    <div class="right">
+      <p class=message>
+      </p>
+    </div>
+  </div>
+  <div class="actions">
+    <div class="ui circular orange button">
+      Ok
+    </div>
+  </div>
+</div>
+
+    <main class="master-body" scrollable-to-top data-target=".scroll-top" >
+      
+<div class="ui page grid" ng-controller='TagController' ng-init="init();">
+  <input type='hidden' ng-init='tagFollowed=false'/>
+  <input type='hidden' ng-init="followEndpoint='/tags/AWS/follow'"/>
+  <input type='hidden' ng-init="unfollowEndpoint='/tags/AWS/unfollow'"/>
+  <input type='hidden' ng-init="followerCount=3"/>
+
+  <div class="sixteen wide column feed-col">
+
+    <!-- Tag info -->
+    <div class="ui stackable grid tag-info">
+      <div class="equal height row">
+
+        <!-- Tag icon -->
+        <div class="middle aligned center aligned two wide column tag-icon">
+          <img class="tag-image" src="../assets/tags/default-499574ee87d431f87c234a7c4da533a5.png">
+        </div>
+
+        <div class="middle aligned fourteen wide column tag-detail">
+          <div class='right floated ui small circular basic button' ng-class="{'active':tagFollowed}" ng-click="followTag();">
+            <div ng-show='tagFollowed'>
+              Following
+            </div>
+            <div ng-show='!tagFollowed'>
+              Follow
+            </div>
+          </div>
+
+          <h3 class="name">
+            <div class="smart-icon">
+              <img class="tag-image ui image" src="../assets/tags/default-499574ee87d431f87c234a7c4da533a5.png">
+            </div>
+            <a href="AWS.html">AWS</a>
+          </h3>
+
+          <i class="small green hand right icon smart-point-hand"></i>
+          <div class="info">
+            <div class="posts">
+              <a href="#" >10</a>
+              <span>bài viết</span>
+            </div>
+            &nbsp;
+            <div class="followers">
+              <a href="#" >{{followerCount}}</a>
+              <span>followers</span>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <div class="ui horizontal icon divider">
+      <i class="circular green down arrow icon"></i>
+    </div>
+
+    <!-- Feed -->
+    <div class="ui massive selection divided list feed-list" ng-cloak ng-controller="PaginationController" ng-init="init('tag', 'AWS')">
+
+      <div class="item" ng-repeat="post in posts">
+
+        <!-- Item -->
+        <a href="%7b%7b%20post.user.html" class="ui avatar image">
+          <img alt="White" class="lazy" original="{{ post.user.avatar_url_path }}" src="../assets/common/white-2fc71600ba5d5c4443a7dbb1375f1803.png" />
+        </a>
+        <a href="%7b%7b%20post.path%20%7d%7d" class="right floated feed-date">
+          {{ post.like_cnt }}
+          <i class="bookmark icon"></i>
+          {{ post.cmts_cnt }}
+          <i class="comment icon"></i>
+        </a>
+        <div class="content">
+          <div class="header">
+            <a href="%7b%7b%20post.path%20%7d%7d">
+              {{ post.title }}
+            </a>
+            <div class="tag">
+              <a href="%7b%7b%20tag.path%20%7d%7d" class="ui label" ng-repeat="tag in post.tags">
+                {{ tag.name }}
+              </a>
+            </div>
+          </div>
+          <div class="detail"> {{post.preview}} </div>
+          <div class="meta">
+            <a href="%7b%7b%20post.user.html">
+              {{ post.user.name}}
+            </a>
+            viết
+            {{ post.created_at }}
+            trước
+          </div>
+          <div class="smart-meta">
+            {{ post.like_cnt }}
+            <i class="bookmark icon"></i>
+            {{ post.cmts_cnt }}
+            <i class="comment icon"></i>
+          </div>
+        </div>
+      </div>
+
+      <!-- Load more button -->
+      <div class="ui fluid basic button load-more segment touchend-replace" ng-hide="reachFull" ng-click="loadmore()">
+        <div class="ui inverted dimmer" ng-class="{'active':loading_more}">
+          <div class="ui text loader" style="background: url(../assets/common/ring-41adc1d3011969434d0f5d3a59f879a2.gif) no-repeat 45% 0!important; background-size: 32px 32px!important;">
+            Đang tải dữ liệu ...
+          </div>
+        </div>
+        <span ng-hide="loading_more">
+          Xem tiếp...
+        </span>
+      </div>
+    </div>
+  </div>
+</div> <!-- Page grid -->
+
+    </main>
+      <!-- Footer -->
+<footer class="master-footer ui page grid">
+  <div class="row">
+    <div class="column">
+      <div class="ui horizontal divider">
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="twelve wide main column">
+      <div class="links">
+        <a target="_blank" href="../tos.html">
+          Điều khoản
+        </a>
+        <a target="_blank" href="https://www.facebook.com/groups/1466126020344500/">
+          Phản hồi
+        </a>
+        <a target="_blank" href="https://github.com/Kipalog/Issue-tracker">
+          Yêu cầu
+        </a>
+        <a target="_blank" href="https://www.facebook.com/pages/Kipalog/486208978117754">
+          Fanpage
+        </a>
+      </div>
+    </div>
+    <div class="four wide right column">
+      <div class="copyright">
+        <span>
+          Copyright © 2018 Kipalog
+        </span>
+      </div>
+    </div>
+  </div>
+</footer>
+
+  </body>
+
+<!-- Mirrored from kipalog.com/tags/AWS by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 09 Jan 2019 00:25:25 GMT -->
+</html>
